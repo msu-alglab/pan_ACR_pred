@@ -23,7 +23,7 @@ if __name__ == "__main__":
     " the unknown regions originate (if different from fimo_known)")
     parser.add_argument("-s", "--scoring", help="'None' for unweighted scoring, 'Default' for scoring weighted" \
     " by motif relevance, filepath for custom scoring")
-    parser.add_argument("-r", "--reset", action="store_true", help="Clear all current temp files when this flag is present (rerun all processes).")
+    parser.add_argument("-n", "--noreset", action="store_true", help="Does not clear temp files when this flag is present (Warning: May not work correctly if there are incomplete temp files)")
 
     args = parser.parse_args()
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     
     # Set up -----------------------------------------------------------------
 
-    if args.reset:
+    if not args.noreset:
         try:
             shutil.rmtree("./.temp")
         except FileNotFoundError:

@@ -25,7 +25,7 @@ To run the pipeline, simply navigate to this directory and then run ``$ python .
 
 ```
 usage: pan_ACR_pred [-h] -o OUTPUT -k KNOWN -u UNKNOWN -kf KNOWN_FIMO [-uf UNKNOWN_FIMO]
-                    [-s SCORING] [-r]
+                    [-s SCORING] [-n]
 
 Pangenomic Chromatin Accessibility Prediction
 
@@ -50,8 +50,8 @@ options:
   -s SCORING, --scoring SCORING
                         'None' for unweighted scoring, 'Default' for scoring weighted by motif    
                         relevance, filepath for custom scoring
-  -r, --reset           Clear all current temp files when this flag is present (rerun all
-                        processes).
+  -n, --noreset         Does not clear temp files when this flag is present 
+                        (Warning: May not work correctly if there are incomplete temp files).
 ```
 
 ### Output
